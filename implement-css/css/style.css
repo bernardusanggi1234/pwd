@@ -1,0 +1,163 @@
+/* ===========================
+   Reservation Hotel Room — Clean Luxury
+   Save as: css/style.css
+   =========================== */
+
+:root{
+  /* Palet clean & mewah (kontras pas) */
+  --bg: #f4f1ea;        /* ivory */
+  --panel: #ffffff;     /* kartu putih */
+  --border: #d6c49a;    /* garis keemasan lembut (lebih tegas) */
+  --text: #1f1f1f;      /* teks utama gelap */
+  --muted: #5a5243;     /* label */
+  --accent: #c29a2f;    /* emas utama */
+  --accent-deep: #9f7c20; /* hover */
+  --shadow: 0 10px 28px rgba(0,0,0,.06);
+  --radius: 16px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+h1{
+  text-align: center;
+  margin: 32px 16px 22px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  color: #1d1a15;
+}
+
+form{
+  max-width: 860px;
+  margin: 0 auto 56px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+/* Fieldset & legend */
+fieldset{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 18px 8px;
+  background: #fffdfa; /* putih hangat */
+  margin: 0;
+}
+
+legend{
+  padding: 0 10px;
+  color: var(--accent-deep);
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+ol{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li{ margin: 14px 0 18px; }
+
+label{
+  display: inline-block;
+  font-size: .96rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Inputs & Selects — jelas, kontras, bersih */
+input[type="text"],
+select{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #cdb57c;  /* sedikit lebih tegas dari border panel */
+  background: #ffffff;
+  color: var(--text);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+input[type="text"]::placeholder{ color: #7b6f5b; }
+
+input[type="text"]:focus,
+select:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(194,154,47,.18);
+}
+
+/* Radio (Breakfast) */
+input[type="radio"]{
+  accent-color: var(--accent);
+  transform: translateY(1px);
+  margin-right: 6px;
+}
+
+#with + label,
+#without + label{
+  margin-right: 16px;
+  color: var(--text);
+}
+
+/* Tombol Submit — di tengah & lebih premium */
+form p:last-of-type{
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="submit"]{
+  appearance: none;
+  display: inline-block;
+  padding: 12px 26px;
+  border: 1px solid #b48b26;      /* garis emas agar lebih defined */
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ffe08f, #c29a2f);
+  color: #1a1408;
+  box-shadow: 0 6px 18px rgba(194,154,47,.28), inset 0 1px 0 rgba(255,255,255,.55);
+  transition: transform .06s ease, filter .12s ease, box-shadow .12s ease;
+}
+
+input[type="submit"]:hover{
+  filter: brightness(1.03);
+  box-shadow: 0 8px 22px rgba(194,154,47,.36), inset 0 1px 0 rgba(255,255,255,.6);
+}
+
+input[type="submit"]:active{ transform: translateY(1px); }
+
+/* Rapikan <br> beruntun dalam markup asli */
+input + br + br,
+select + br + br{ display: none; }
+
+/* Spasi antar section (tetap kompatibel) */
+fieldset + br,
+fieldset + br + fieldset { display: block; margin-top: 16px; }
+
+/* Aksesibilitas */
+:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 560px){
+  form{ padding: 18px; }
+  h1{ font-size: 1.35rem; }
+  legend{ font-size: 1rem; }
+}
